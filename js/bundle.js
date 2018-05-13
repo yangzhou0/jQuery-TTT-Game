@@ -85,7 +85,9 @@ const View = __webpack_require__(2);
 const Game = __webpack_require__(3);
 
 $( () => {
-  // Your code here
+  let game = new Game();
+  let $el = $('.ttt')
+  new View(game, $el);
 });
 
 
@@ -94,13 +96,19 @@ $( () => {
 /***/ (function(module, exports) {
 
 class View {
-  constructor(game, $el) {}
+  constructor(game, $el) {
+    this.game= game;
+    this.$el = $el;
+    this.setupBoard();
+  }
 
   bindEvents() {}
 
   makeMove($square) {}
 
-  setupBoard() {}
+  setupBoard() {
+    
+  }
 }
 
 module.exports = View;
