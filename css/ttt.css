@@ -16,12 +16,16 @@ ul{
   list-style: none;
 }
 
-li.square{
-  border:2px solid gray;
+.square{
+  border:2px solid black;
   margin: 0;
   width:150px;
   height: 150px;
+  background-color: gray;
 }
 
+.square:hover{
+  background-color: yellow;
+}
 .ttt{
 }
