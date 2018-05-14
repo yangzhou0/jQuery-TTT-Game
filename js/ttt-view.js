@@ -19,7 +19,10 @@ class View {
 
   makeMove($square) {
     let pos = $square.data('pos');
+    let currentPlayer = this.game.currentPlayer;
+    $square.text(currentPlayer);
     this.game.playMove(pos);
+
   }
 
   setupBoard() {

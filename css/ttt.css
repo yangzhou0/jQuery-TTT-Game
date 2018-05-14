@@ -22,6 +22,8 @@ ul{
   width:150px;
   height: 150px;
   background-color: gray;
+  font-size: 100px;
+  text-align: center;
 }
 
 .square:hover{
