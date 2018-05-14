@@ -3,38 +3,36 @@ class View {
     this.game = game;
     this.$el = $el;
     this.setupBoard();
+    this.bindEvents();
   }
 
   bindEvents() {
     let view = this;
-    $('ul').on("click",'.square',function(e) {
+    $('li').on("click",function(e) {
       e.stopPropagation();
+      e.preventDefault();
       let $square = $(e.currentTarget);
       $square.css("background-color", "white");
       view.makeMove($square);
     });
-
-
-
   }
 
   makeMove($square) {
-    this.game.playMove($square.data('pos'));
-    alert(this.game.currentPlayer);
+    let pos = $square.data('pos');
+    this.game.playMove(pos);
   }
 
   setupBoard() {
     let $board = $("<ul>");
-    this.$el.append($board);
     for (let i = 0; i < 3; i++) {
       for (let j = 0; j < 3; j++) {
         let $square = $("<li>")
           .addClass("square")
           .data("pos", [i, j]);
           $board.append($square);
-          this.bindEvents();
       }
     }
+    this.$el.append($board);
   }
 }
 
