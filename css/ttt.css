@@ -3,10 +3,17 @@ h1{
 }
 
 ul{
+  margin: auto;
+  display:flex;
   flex-direction: row;
   flex-wrap:wrap;
+  width:500px;
+  height:500px;
+  justify-content: center;
+  align-items: center;
 }
 
 li.square{
-  
+  margin: auto;
+  width:150px;
 }
