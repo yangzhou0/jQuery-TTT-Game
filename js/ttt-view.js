@@ -22,16 +22,16 @@ class View {
     try {
       this.game.playMove(pos);
     } catch (e) {
-      alert('this ' + e.msg);
+      alert("this " + e.msg);
       return;
     }
     $square.text(currentPlayer).addClass(`${currentPlayer}`);
     if (this.game.isOver()) {
-      $('li').off("click");
-      $('.square').addClass('over');
-      
+      $("li").off("click");
+      $(".square").addClass("over");
       let winner = this.game.board.winner();
-      let $caption = $('<figcaption>').text(winner + ' won!');
+      $(`.${winner}`).css({ background: "green", color: "white" });
+      let $caption = $("<figcaption>").text(winner + " won!");
       this.$el.append($caption);
     }
   }
