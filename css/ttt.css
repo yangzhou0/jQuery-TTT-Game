@@ -47,3 +47,12 @@ figcaption{
   background: white;
   transition: background 0.5s;
 }
+
+.over{
+  color:red;
+  background:white;
+}
+
+.over:hover{
+  background: white;
+}

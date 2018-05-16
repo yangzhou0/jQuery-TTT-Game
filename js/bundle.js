@@ -125,6 +125,8 @@ class View {
     $square.text(currentPlayer).addClass(`${currentPlayer}`);
     if (this.game.isOver()) {
       $('li').off("click");
+      $('.square').addClass('over');
+      
       let winner = this.game.board.winner();
       let $caption = $('<figcaption>').text(winner + ' won!');
       this.$el.append($caption);
