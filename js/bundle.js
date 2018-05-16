@@ -125,6 +125,10 @@ class View {
     }
     $square.text(currentPlayer);
     if (this.game.isOver()) {
+      debugger;
+      let winner = this.game.board.winner();
+      let $caption = $('<figcaption>').text(winner + 'won!');
+      this.$el.append($caption);
     }
   }
 
