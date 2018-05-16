@@ -109,7 +109,6 @@ class View {
       e.stopPropagation();
       e.preventDefault();
       let $square = $(e.currentTarget);
-      $square.css("background-color", "white");
       view.makeMove($square);
     });
   }
@@ -123,7 +122,7 @@ class View {
       alert('this ' + e.msg);
       return;
     }
-    $square.text(currentPlayer);
+    $square.text(currentPlayer).addClass(`${currentPlayer}`);
     if (this.game.isOver()) {
       $('li').off("click");
       let winner = this.game.board.winner();

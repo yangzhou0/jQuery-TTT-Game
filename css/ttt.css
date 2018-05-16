@@ -27,7 +27,8 @@ ul{
 }
 
 .square:hover{
-  background-color: yellow;
+  background: yellow;
+  transition: background 0.5s;
 }
 .ttt{
 }
@@ -35,4 +36,14 @@ ul{
 figcaption{
   text-align: center;
   font-size: 50px;
+}
+
+.x, .o{
+  background: white;
+}
+
+.x:hover,
+.o:hover {
+  background: white;
+  transition: background 0.5s;
 }
