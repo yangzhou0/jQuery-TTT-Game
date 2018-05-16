@@ -105,7 +105,7 @@ class View {
 
   bindEvents() {
     let view = this;
-    $('li').on("click",function(e) {
+    $("li").on("click", function(e) {
       e.stopPropagation();
       e.preventDefault();
       let $square = $(e.currentTarget);
@@ -115,11 +115,17 @@ class View {
   }
 
   makeMove($square) {
-    let pos = $square.data('pos');
+    let pos = $square.data("pos");
     let currentPlayer = this.game.currentPlayer;
+    try {
+      this.game.playMove(pos);
+    } catch (e) {
+      alert('this ' + e.msg);
+      return;
+    }
     $square.text(currentPlayer);
-    this.game.playMove(pos);
-
+    if (this.game.isOver()) {
+    }
   }
 
   setupBoard() {
@@ -129,7 +135,7 @@ class View {
         let $square = $("<li>")
           .addClass("square")
           .data("pos", [i, j]);
-          $board.append($square);
+        $board.append($square);
       }
     }
     this.$el.append($board);
